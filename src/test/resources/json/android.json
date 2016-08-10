@@ -1,0 +1,127 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "examples": [
+          {
+            "line": 12,
+            "name": "",
+            "description": "",
+            "id": "android-applications-and-browsers-tests;user-opens-native-application-and-clicks-button;",
+            "rows": [
+              {
+                "cells": [
+                  "application"
+                ],
+                "line": 13,
+                "id": "android-applications-and-browsers-tests;user-opens-native-application-and-clicks-button;;1"
+              },
+              {
+                "cells": [
+                  "Android app"
+                ],
+                "line": 14,
+                "id": "android-applications-and-browsers-tests;user-opens-native-application-and-clicks-button;;2"
+              }
+            ],
+            "keyword": "Examples"
+          }
+        ],
+        "line": 7,
+        "name": "User opens native application and clicks button",
+        "description": "",
+        "id": "android-applications-and-browsers-tests;user-opens-native-application-and-clicks-button",
+        "type": "scenario_outline",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "line": 8,
+            "name": "user opens \u003capplication\u003e",
+            "keyword": "Given "
+          },
+          {
+            "line": 9,
+            "name": "user clicks the button",
+            "keyword": "When "
+          },
+          {
+            "line": 10,
+            "name": "the button should be still visible",
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "examples": [
+          {
+            "line": 22,
+            "name": "",
+            "description": "",
+            "id": "android-applications-and-browsers-tests;user-opens-google-homepage-and-does-maths;",
+            "rows": [
+              {
+                "cells": [
+                  "application",
+                  "enter",
+                  "result"
+                ],
+                "line": 23,
+                "id": "android-applications-and-browsers-tests;user-opens-google-homepage-and-does-maths;;1"
+              },
+              {
+                "cells": [
+                  "Android browser",
+                  "2 * 2",
+                  "4"
+                ],
+                "line": 24,
+                "id": "android-applications-and-browsers-tests;user-opens-google-homepage-and-does-maths;;2"
+              }
+            ],
+            "keyword": "Examples"
+          }
+        ],
+        "line": 17,
+        "name": "User opens Google homepage and does maths",
+        "description": "",
+        "id": "android-applications-and-browsers-tests;user-opens-google-homepage-and-does-maths",
+        "type": "scenario_outline",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "line": 18,
+            "name": "user opens Google homepage in \u003capplication\u003e",
+            "keyword": "Given "
+          },
+          {
+            "line": 19,
+            "name": "user enters \"\u003center\u003e\" into the search input",
+            "keyword": "When "
+          },
+          {
+            "line": 20,
+            "name": "the calculator is displayed",
+            "keyword": "Then "
+          },
+          {
+            "line": 21,
+            "name": "result shown is \u003cresult\u003e",
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Android applications and browsers tests",
+    "description": "\nAs a tester I would like to open all applications and browsers\nin order to test them.",
+    "id": "android-applications-and-browsers-tests",
+    "keyword": "Feature",
+    "uri": "/Users/Vadim/FeatureParser/src/test/resources/features/android.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@android"
+      }
+    ]
+  }
+]

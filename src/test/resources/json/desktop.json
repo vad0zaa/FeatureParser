@@ -1,0 +1,77 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "examples": [
+          {
+            "line": 12,
+            "name": "",
+            "description": "",
+            "id": "desktop-browsers-tests;user-opens-google-homepage-and-does-maths;",
+            "rows": [
+              {
+                "cells": [
+                  "application",
+                  "enter",
+                  "result"
+                ],
+                "line": 13,
+                "id": "desktop-browsers-tests;user-opens-google-homepage-and-does-maths;;1"
+              },
+              {
+                "cells": [
+                  "desktop browser",
+                  "2 + 2",
+                  "4"
+                ],
+                "line": 14,
+                "id": "desktop-browsers-tests;user-opens-google-homepage-and-does-maths;;2"
+              }
+            ],
+            "keyword": "Examples"
+          }
+        ],
+        "line": 7,
+        "name": "User opens Google homepage and does maths",
+        "description": "",
+        "id": "desktop-browsers-tests;user-opens-google-homepage-and-does-maths",
+        "type": "scenario_outline",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "line": 8,
+            "name": "user opens Google homepage in \u003capplication\u003e",
+            "keyword": "Given "
+          },
+          {
+            "line": 9,
+            "name": "user enters \"\u003center\u003e\" into the search input",
+            "keyword": "When "
+          },
+          {
+            "line": 10,
+            "name": "the calculator is displayed",
+            "keyword": "Then "
+          },
+          {
+            "line": 11,
+            "name": "result shown is \u003cresult\u003e",
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Desktop browsers tests",
+    "description": "\nAs a tester I would like to open all browsers\nin order to test them.",
+    "id": "desktop-browsers-tests",
+    "keyword": "Feature",
+    "uri": "/Users/Vadim/FeatureParser/src/test/resources/features/desktop.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@desktop"
+      }
+    ]
+  }
+]
