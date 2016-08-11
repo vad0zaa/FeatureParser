@@ -14,7 +14,12 @@ class TestGherkinParser {
 
         boolean  tagFound = false
 
-        String tag = '@android'
+        List tag = []
+
+        tag.add('@android')
+        tag.add('@ios')
+
+        //String tag = '@android'
 
         String featuresHomeDirectory = 'src/test/resources/features'
 
@@ -37,7 +42,7 @@ class TestGherkinParser {
 
             println ''
             println '-----------------------------------------------'
-            println ' featureName = ' + featureName + '  ,tag = ' + tag + ' ,found = ' + tagFound
+            println ' featureName = ' + featureName + '  ,tag list = ' + tag + ' , found = ' + tagFound
 
         }
 

@@ -19,10 +19,12 @@ import gherkin.util.FixJava;
 class GherkinParser {
 
 
-    public static boolean findFeatureTag(String featurePath, String tag) {
+    public static boolean findFeatureTag(String featurePath, List tagsToFind) {
 
+        boolean output = false
         StringBuilder json = null;
         String gherkin = null;
+        String featureTags = null
 
         gherkin = readFromFile(featurePath);
         if(gherkin == null) {
@@ -38,24 +40,25 @@ class GherkinParser {
         formatter.done();
         formatter.close();
 
-        String resultString = null
-
         def jsonSlurper = new JsonSlurper()
-
         def object = jsonSlurper.parseText(json.toString())
 
         object.each {
 
             if(object.tags.name != null)
-            { resultString = object.tags.name}
+            { featureTags = object.tags.name}
 
         }
 
-        if(resultString != null && resultString.contains(tag)) {
-            return true;
-        } else {
-            return false;
+        if(featureTags != null) {
+            tagsToFind.each { String tag ->
+                if (featureTags.contains(tag)) {
+                    output = true
+                }
+            }
         }
+
+        return output
     }
 
 
