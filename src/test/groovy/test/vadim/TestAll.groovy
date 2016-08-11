@@ -9,52 +9,46 @@ import org.testng.Assert
  */
 
 
-public class Test {
+public class TestAll {
 
     @org.testng.annotations.Test
     public void startParsing(){
 
-        String parsingFormat = "ugly";
         boolean  saveJsonToFile = true;
 
-        System.out.println("...startParsing");
+        String featuresHomeDirectory = 'src/test/resources/features'
+
+        String jsonTargetDirectory = 'src/test/resources/json/'
 
         String projectDirecory = System.getProperty("user.dir");
 
-        System.out.println("Current working directory : " + projectDirecory);
-
-       // def featuress = fileTree(dir: 'src/test/resources').include '**/*.feature'
-
         def features = []
 
-        def featuresDirectory = new File(projectDirecory + '/' + 'src/test/resources/features')
+        def featuresDirectory = new File(projectDirecory + '/' + featuresHomeDirectory)
 
         featuresDirectory.eachFileRecurse (FileType.FILES) { file ->
             features << file
         }
 
-
         features.each {
 
             String featureName = it.name.take(it.name.lastIndexOf('.'))
-            //println 'fileWithoutExt=' + featureName
 
             String featurePath = it.path
-            //println 'featurePath=' + featurePath
 
-            String jsonPath = projectDirecory + '/' + 'src/test/resources/json/' + featureName + '.json'
-            //println 'jsonPath=' + jsonPath
+            String jsonPath = projectDirecory + '/' + jsonTargetDirectory + featureName + '.json'
 
             String jsonString
 
-            GherkinToJson gtj = new GherkinToJson(parsingFormat, saveJsonToFile)
+            GherkinToJson gtj = new GherkinToJson(saveJsonToFile)
+
             jsonString =  gtj.gherkinTojson(featurePath, jsonPath)
 
-            println '---------------------------------------'
-            println 'is Android feature? ' +  (findTag(jsonString,"@android"))
-            println 'is Desktop feature? ' +  (findTag(jsonString,"@desktop"))
-            println 'is Ios feature? ' +  (findTag(jsonString,"@ios"))
-            println '---------------------------------------'
+            // try to find some tag in given feature
+             findTag(jsonString,"@android")
+             findTag(jsonString,"@desktop")
+             findTag(jsonString,"@ios")
+
         }
 
     }
@@ -76,9 +70,12 @@ public class Test {
 
             if(resultString != null && resultString.contains(tag)) {
 
-                println('name = ' + object.name);
-                println('id = ' + object.id);
+                println '---------------------------------------'
+                println tag + ' tag is found'
+                println('feature name = ' + object.name);
+                println('feature id = ' + object.id);
                 println('tags.name = ' + object.tags.name);
+                println '---------------------------------------'
 
                 return true;
             } else {
